@@ -83,11 +83,3 @@ Jocul continuă până când șarpele se lovește de o barieră (perete) sau de 
   - **`make clean`**: Șterge fișierele temporare și executabilul generat.
 
 ---
-
-## Cum să rulezi jocul
-
-1. **Clonează repository-ul**:
-
-   ```bash
-   git clone https://github.com/username/SnakeGame.git
-   cd SnakeGame
