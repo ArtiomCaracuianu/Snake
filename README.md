@@ -1,41 +1,48 @@
 Acest proiect implementează jocul clasic al șarpelui (Snake) și folosește un design modular, cu mai multe module separate pentru gestionarea logicii jocului și pentru redarea graficii. Fiecare componentă este organizată într-un fișier propriu, ceea ce permite o dezvoltare mai ușoară și o întreținere eficientă a codului.
 
 Structura Fișierelor
+
 1.src/snake.cpp și include/snake.hpp
-Modificări:
-Codul a fost organizat într-o bibliotecă statică (libsnake.a).
-Funcționalitate:
-Modulul este responsabil de logica mișcării șarpelui, de creșterea acestuia și de plasarea pe tabla de joc.
+ Modificări:
+ 
+ Codul a fost organizat într-o bibliotecă statică (libsnake.a).
+ Funcționalitate:
+ 
+ Modulul este responsabil de logica mișcării șarpelui, de creșterea acestuia și de plasarea pe tabla de joc.
 
 2.src/painter.cpp și include/painter.hpp
-Modificări:
-Acest modul servește ca legătură între logica jocului și redarea graficii. A fost compilat într-o bibliotecă statică (libpainter.a).
-Funcționalitate:
-Se ocupă cu desenarea șarpelui, a textului și a altor elemente vizuale pe ecran. Metodele de redare sunt definite în cadrul clasei abstracte AbstractPainter.
+ Modificări:
+ Acest modul servește ca legătură între logica jocului și redarea graficii. A fost compilat într-o bibliotecă statică (libpainter.a).
+ Funcționalitate:
+ Se ocupă cu desenarea șarpelui, a textului și a altor elemente vizuale pe ecran. Metodele de redare sunt definite în cadrul clasei 
+ abstracte AbstractPainter.
 
-3..gitignore
-Modificări:
-Au fost adăugate reguli pentru a ignora fișierele temporare și automate, cum ar fi fișierele obiect (.o), bibliotecile statice și dinamice (.a, .so), și fișierele executabile (.exe, *.out).
-Funcționalitate:
-Asigură că fișierele generate automat nu sunt incluse în controlul versiunii, menținând astfel un depozit curat.
+3.gitignore
+ Modificări:
+ Au fost adăugate reguli pentru a ignora fișierele temporare și automate, cum ar fi fișierele obiect (.o), bibliotecile statice și dinamice 
+ (.a, .so), și fișierele executabile (.exe, *.out).
+ Funcționalitate:
+ Asigură că fișierele generate automat nu sunt incluse în controlul versiunii, menținând astfel un depozit curat.
 
 4.src/point.cpp și include/point.hpp
-Modificări:
-Codul acestei componente este compilat într-o bibliotecă statică (libpoint.a).
-Funcționalitate:
-Gestionează coordonatele (punctele) esențiale pentru plasarea șarpelui și a altor elemente pe tabla de joc.
+ Modificări:
+ Codul acestei componente este compilat într-o bibliotecă statică (libpoint.a).
+ Funcționalitate:
+ Gestionează coordonatele esențiale pentru plasarea șarpelui și a altor elemente pe tabla de joc.
 
 5.src/board.cpp și include/board.hpp
-Modificări:
-Compilat într-o bibliotecă statică (libboard.a).
-Funcționalitate:
-Acest modul definește dimensiunile tablei de joc și gestionează plasarea obiectelor pe aceasta.
+ Modificări:
+ Compilat într-o bibliotecă statică (libboard.a).
+ Funcționalitate:
+ Acest modul definește dimensiunile tablei de joc și gestionează plasarea obiectelor pe aceasta.
 
 6.main.cpp
-Modificări:
-Este fișierul principal care integrează toate modulele (Board, Snake, Painter).
-Funcționalitate:
-Servește ca punct de intrare al aplicației, permițând utilizatorului să testeze logica jocului.
+ Modificări:
+ 
+ Este fișierul principal care integrează toate modulele (Board, Snake, Painter).
+ 
+ Funcționalitate:
+ Servește ca punct de intrare al aplicației, permițând utilizatorului să testeze logica jocului.
 
 7.abstract_painter.hpp
 Modificări:
