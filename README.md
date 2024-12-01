@@ -14,16 +14,22 @@ O implementare simplă a jocului clasic Snake în C++
 - Cresterea sarpelui in timp ce mananca mere
 
 4. Tipurile de Date Noi Declarate
+
 a. Point
+
 Descriere: Point este o structură care reprezintă un punct în coordonatele bidimensionale (2D). Aceasta conține două variabile: x și y, care sunt coordonatele unui punct pe tabla de joc.
+
 Utilizare: Structura Point este folosită pentru a marca pozițiile elementelor din joc, cum ar fi capul și segmentele corpului șarpelui sau pozițiile merelor pe tablă.
+
 b. Board
+
 Descriere: Clasa Board definește dimensiunile și cadrul pentru joc. Aceasta are două variabile esențiale, width și height, care stabilesc dimensiunile tablei de joc.
 Utilizare: Board se ocupă cu gestionarea limitei de mișcare a șarpelui și cu definirea zonei de joc. Este folosită pentru a verifica dacă mișcările șarpelui sunt valide și pentru a plasa obiectele pe tabla de joc.
+
 c. Snake
 Descriere: Clasa Snake reprezintă șarpele din joc. Aceasta stochează pozițiile segmentelor șarpelui într-un array de tip Point, iar lungimea șarpelui este păstrată într-o variabilă length.
 Utilizare: Clasa Snake se ocupă cu mișcarea șarpelui, creșterea acestuia atunci când consumă un măr și verificarea coliziunilor între șarpe și obiectele de pe tablă.
-5. Funcționalitatea Fișierelor board.hpp, snake.hpp și point.hpp
+6. Funcționalitatea Fișierelor board.hpp, snake.hpp și point.hpp
 Point.hpp
 Scop: Fișierul point.hpp definește structura fundamentală Point, care reprezintă un punct în coordonate 2D. Acesta este folosit pentru a stoca și manipula pozițiile pe tabla de joc, inclusiv pentru a reprezenta capul și corpul șarpelui sau mărul.
 
