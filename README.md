@@ -11,53 +11,72 @@ Structura Fișierelor
  Modulul este responsabil de logica mișcării șarpelui, de creșterea acestuia și de plasarea pe tabla de joc.
 
 2.src/painter.cpp și include/painter.hpp
+
  Modificări:
  Acest modul servește ca legătură între logica jocului și redarea graficii. A fost compilat într-o bibliotecă statică (libpainter.a).
+ 
  Funcționalitate:
  Se ocupă cu desenarea șarpelui, a textului și a altor elemente vizuale pe ecran. Metodele de redare sunt definite în cadrul clasei 
  abstracte AbstractPainter.
 
 3.gitignore
  Modificări:
- Au fost adăugate reguli pentru a ignora fișierele temporare și automate, cum ar fi fișierele obiect (.o), bibliotecile statice și dinamice 
+ Au fost adăugate reguli pentru a ignora fișierele temporare și automate, cum ar fi fișierele obiect (.o), bibliotecile statice și dinamice
+ 
  (.a, .so), și fișierele executabile (.exe, *.out).
+ 
  Funcționalitate:
  Asigură că fișierele generate automat nu sunt incluse în controlul versiunii, menținând astfel un depozit curat.
 
 4.src/point.cpp și include/point.hpp
+
  Modificări:
  Codul acestei componente este compilat într-o bibliotecă statică (libpoint.a).
+ 
  Funcționalitate:
  Gestionează coordonatele esențiale pentru plasarea șarpelui și a altor elemente pe tabla de joc.
 
 5.src/board.cpp și include/board.hpp
+
  Modificări:
  Compilat într-o bibliotecă statică (libboard.a).
+ 
  Funcționalitate:
  Acest modul definește dimensiunile tablei de joc și gestionează plasarea obiectelor pe aceasta.
 
-6.main.cpp
+6.main.cp
+
  Modificări:
- 
  Este fișierul principal care integrează toate modulele (Board, Snake, Painter).
  
  Funcționalitate:
  Servește ca punct de intrare al aplicației, permițând utilizatorului să testeze logica jocului.
 
 7.abstract_painter.hpp
-Modificări:
-Tipurile de date char* au fost înlocuite cu std::string, iar char** cu std::vector<std::string>, în acord cu standardele moderne din STL (Standard Template Library).
-Funcționalitate:
-Definirea unei interfețe abstracte pentru redarea grafică a jocului, inclusiv metode pentru desenarea textului și imaginilor. Clasele care moștenesc această interfață trebuie să implementeze aceste metode.
+
+ Modificări:
+ Tipurile de date char* au fost înlocuite cu std::string, iar char** cu std::vector<std::string>, în acord cu standardele moderne din STL 
+ (Standard Template Library).
+ 
+ Funcționalitate:
+ Definirea unei interfețe abstracte pentru redarea grafică a jocului, inclusiv metode pentru desenarea textului și imaginilor. Clasele care 
+ moștenesc această interfață trebuie să implementeze aceste metode.
 
 8.src/painter.cpp și include/painter.hpp
-Modificări:
-În acest modul, tipurile de date char* au fost înlocuite cu std::string pentru a facilita manipularea textului, iar pentru imagini s-a folosit std::vector<std::string> în loc de char**, îmbunătățind gestionarea memoriei și manipularea datelor.
-Funcționalitate:
-Clasa Painter se ocupă cu desenarea efectivă a elementelor pe tabla de joc, inclusiv șarpele și textele.
+
+ Modificări:
+ În acest modul, tipurile de date char* au fost înlocuite cu std::string pentru a facilita manipularea textului, iar pentru imagini s-a 
+ folosit std::vector<std::string> în loc de char**, îmbunătățind gestionarea memoriei și manipularea datelor.
+ 
+ Funcționalitate:
+ Clasa Painter se ocupă cu desenarea efectivă a elementelor pe tabla de joc, inclusiv șarpele și textele.
 
 9.Makefile
-Modificări:
-Procesul de compilare a fost modularizat, fiecare componentă (Point, Board, Painter, Snake) fiind compilată într-o bibliotecă statică (.a).
-Funcționalitate:
-Definește pașii necesari pentru construirea aplicației, incluzând compilarea fiecărei componente într-o bibliotecă statică și linkarea acestora într-un program complet. De asemenea, include un script de curățare (clean) pentru a elimina fișierele generate în timpul compilării.
+
+ Modificări:
+ Procesul de compilare a fost modularizat, fiecare componentă (Point, Board, Painter, Snake) fiind compilată într-o bibliotecă statică (.a).
+ 
+ Funcționalitate:
+ Definește pașii necesari pentru construirea aplicației, incluzând compilarea fiecărei componente într-o bibliotecă statică și linkarea 
+ acestora într-un program complet. De asemenea, include un script de curățare (clean) pentru a elimina fișierele generate în timpul 
+ compilării.
