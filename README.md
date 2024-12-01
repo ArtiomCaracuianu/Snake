@@ -3,11 +3,11 @@ Acest proiect implementează jocul clasic al șarpelui (Snake) și folosește un
 Structura Fișierelor
 
 1.src/snake.cpp și include/snake.hpp
+
  Modificări:
- 
  Codul a fost organizat într-o bibliotecă statică (libsnake.a).
- Funcționalitate:
  
+ Funcționalitate:
  Modulul este responsabil de logica mișcării șarpelui, de creșterea acestuia și de plasarea pe tabla de joc.
 
 2.src/painter.cpp și include/painter.hpp
