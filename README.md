@@ -12,53 +12,70 @@ O implementare simplă a jocului clasic Snake în C++
 - Comenzi de bază pentru deplasarea șarpelui
 - Urmărirea scorului
 - Cresterea sarpelui in timp ce mananca mere
-
+  
 4. Tipurile de Date Noi Declarate
 
-a. Point
+ . Point
 
 Descriere: Point este o structură care reprezintă un punct în coordonatele bidimensionale (2D). Aceasta conține două variabile: x și y, care sunt coordonatele unui punct pe tabla de joc.
 
 Utilizare: Structura Point este folosită pentru a marca pozițiile elementelor din joc, cum ar fi capul și segmentele corpului șarpelui sau pozițiile merelor pe tablă.
 
-b. Board
+ . Board
 
 Descriere: Clasa Board definește dimensiunile și cadrul pentru joc. Aceasta are două variabile esențiale, width și height, care stabilesc dimensiunile tablei de joc.
 Utilizare: Board se ocupă cu gestionarea limitei de mișcare a șarpelui și cu definirea zonei de joc. Este folosită pentru a verifica dacă mișcările șarpelui sunt valide și pentru a plasa obiectele pe tabla de joc.
 
-c. Snake
+ . Snake
+ 
 Descriere: Clasa Snake reprezintă șarpele din joc. Aceasta stochează pozițiile segmentelor șarpelui într-un array de tip Point, iar lungimea șarpelui este păstrată într-o variabilă length.
+
 Utilizare: Clasa Snake se ocupă cu mișcarea șarpelui, creșterea acestuia atunci când consumă un măr și verificarea coliziunilor între șarpe și obiectele de pe tablă.
+
 6. Funcționalitatea Fișierelor board.hpp, snake.hpp și point.hpp
 Point.hpp
+
 Scop: Fișierul point.hpp definește structura fundamentală Point, care reprezintă un punct în coordonate 2D. Acesta este folosit pentru a stoca și manipula pozițiile pe tabla de joc, inclusiv pentru a reprezenta capul și corpul șarpelui sau mărul.
 
 Detalii:
 
 Structura Point: Aceasta include două variabile, x și y, care reprezintă coordonatele unui punct pe tabla de joc.
 Constructor implicit: Setează coordonatele la valori implicite (de obicei 0,0).
+
 Constructor cu parametri: Permite crearea unui punct cu coordonate personalizate, oferind flexibilitate pentru manipularea pozițiilor în joc.
+
 Snake.hpp
+
 Scop: Fișierul snake.hpp definește comportamentele și logica jocului pentru șarpe. Clasa Snake gestionează segmentele șarpelui (stocate într-un array de tip Point), mișcările acestuia și creșterea sa atunci când consumă un măr.
 
 Detalii:
 
 Atributul segments[100]: Un array de tip Point care conține coordonatele fiecărui segment al șarpelui. Este limitat la 100 de segmente pentru simplitate.
+
 Atributul length: Păstrează lungimea curentă a șarpelui, adică numărul de segmente active ale acestuia.
 Metode:
+
 Move(Point direction): Mișcă șarpele în direcția specificată de parametrul direction (de exemplu, sus, jos, stânga, dreapta).
+
 Grow(): Extinde șarpele prin adăugarea unui nou segment la capătul său.
+
 GetHeadPosition(): Returnează poziția capului șarpelui, care este primul element din array-ul segments.
+
 Board.hpp
+
 Scop: Fișierul board.hpp definește clasa Board, care reprezintă tabla de joc. Aceasta gestionează dimensiunile tablei și verifică dacă șarpele respectă limitele jocului.
 
 Detalii:
 
 Atributele width și height: Aceste variabile definesc dimensiunile tablei de joc (lățimea și înălțimea), limitând astfel zona în care șarpele se poate deplasa.
+
 Metode:
 GetWidth(): Returnează lățimea tablei de joc.
+
 GetHeight(): Returnează înălțimea tablei de joc.
+
 Constructorul Board(int w, int h) inițializează tabla cu dimensiunile dorite (de exemplu, 20x20).
+
 6. Fișierele de Implementare: Detalii și Funcționalități
 Board.cpp
 Constructorul Board(int w, int h): Inițializează tabla cu dimensiuni personalizate, definind limitele de joc.
