@@ -33,6 +33,7 @@ Descriere: Clasa Snake reprezintă șarpele din joc. Aceasta stochează poziții
 Utilizare: Clasa Snake se ocupă cu mișcarea șarpelui, creșterea acestuia atunci când consumă un măr și verificarea coliziunilor între șarpe și obiectele de pe tablă.
 
 6. Funcționalitatea Fișierelor board.hpp, snake.hpp și point.hpp
+
 Point.hpp
 
 Scop: Fișierul point.hpp definește structura fundamentală Point, care reprezintă un punct în coordonate 2D. Acesta este folosit pentru a stoca și manipula pozițiile pe tabla de joc, inclusiv pentru a reprezenta capul și corpul șarpelui sau mărul.
@@ -77,26 +78,44 @@ GetHeight(): Returnează înălțimea tablei de joc.
 Constructorul Board(int w, int h) inițializează tabla cu dimensiunile dorite (de exemplu, 20x20).
 
 6. Fișierele de Implementare: Detalii și Funcționalități
+   
 Board.cpp
+
 Constructorul Board(int w, int h): Inițializează tabla cu dimensiuni personalizate, definind limitele de joc.
+
 GetWidth() și GetHeight(): Permite obținerea dimensiunilor tablei pentru a verifica dacă șarpele respectă limitele de mișcare.
+
 Snake.cpp
+
 Constructorul Snake(): Inițializează șarpele cu un singur segment plasat la coordonatele (10, 10) și setează lungimea inițială la 1.
-Move(Point direction): Modifică pozițiile segmentelor șarpelui pe tabla de joc în funcție de direcția dată. Capul șarpelui se mișcă în direcția specificată, iar celelalte segmente îl urmează.
+
+Move(Point direction): Modifică pozițiile segmentelor șarpelui pe tabla de joc în funcție de direcția dată. Capul șarpelui se mișcă în 
+direcția specificată, iar celelalte segmente îl urmează.
+
 Grow(): Extinde lungimea șarpelui prin adăugarea unui nou segment la capătul cozii.
+
 GetHeadPosition(): Returnează poziția capului șarpelui (primul segment din array-ul segments).
+
 Point.cpp
+
 Structura Point este implementată direct în fișierul point.hpp. Nu sunt necesare funcții suplimentare în point.cpp, deoarece structura Point nu conține logica complexă, doar datele pentru coordonate (x, y).
-7. Fișierul .gitignore
+
+8. Fișierul .gitignore
 CXX: Specifică utilizarea compilatorului g++ pentru construirea proiectului.
+
 CXXFLAGS: Setează opțiunile de compilare, cum ar fi -Wall (pentru avertismente) și -std=c++17 (pentru a folosi standardul C++17).
+
 EXEC: Definește numele executabilului generat.
+
 SRC: Listă de fișiere sursă (.cpp) care trebuie compilate.
+
 OBJ: Fișierele obiect rezultate din compilarea fișierelor sursă.
+
 all: Regula care creează executabilul prin legarea fișierelor obiect.
+
 clean: Regula care șterge fișierele obiect și executabilul pentru a curăța directorul de fișierele temporare.
-8. Concluzie
-În ansamblu, structurile Point, Snake și Board definesc elementele fundamentale ale jocului Snake. Point reprezintă pozițiile pe tablă, Snake gestionează comportamentul șarpelui (mișcarea și creșterea acestuia), iar Board definește dimensiunile și limitele de joc. Codul este bine structurat pentru a sprijini extinderea și întreținerea pe termen lung, iar fișierele sursă și header sunt organizate pentru a reflecta acest design modular.
+
+
 
 
 
