@@ -5,21 +5,25 @@
 void TestSnakeOperations() {
     Snake snake;
 
-    // Initial state
-    assert(snake.GetHeadPosition() == Point(10, 10));
+    Point initialHead(10, 10);
+    assert(snake.GetHeadPosition() == initialHead);
 
-    // Test movement
+
     snake.Move(Point(1, 0));
-    assert(snake.GetHeadPosition() == Point(11, 10));
+    Point newHeadRight(11, 10);
+    assert(snake.GetHeadPosition() == newHeadRight);
 
-    // Test growth
-    snake.Grow();
-    snake.Move(Point(0, 1));
-    assert(snake.GetHeadPosition() == Point(11, 11));
+
+    snake.Grow(); 
+    snake.Move(Point(0, 1));  
+    Point newHeadDown(11, 11);
+    assert(snake.GetHeadPosition() == newHeadDown);
+
 }
 
 int main() {
     TestSnakeOperations();
-    std::cout << "All Snake tests passed!" << std::endl;
+
+    std::cout << "All Snake tests passed successfully!" << std::endl;
     return 0;
 }
